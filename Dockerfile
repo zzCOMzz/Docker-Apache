@@ -7,10 +7,10 @@ RUN ["chmod","u+x","composer-installer"]
 RUN ["php","composer-installer"]
 RUN ["mv","composer.phar","/usr/local/bin/composer"]
 RUN apt-get update
-RUN apt-get install -y git
+RUN apt-get install -y git zip unzip libxml2*
 
 
-RUN ["docker-php-ext-install","pdo","pdo_mysql","mysqli","json","mbstring"]
+RUN ["docker-php-ext-install","pdo","pdo_mysql","mysqli","json","mbstring","xml"]
 RUN ["a2enmod","rewrite"]
 
 
